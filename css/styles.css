@@ -1,4 +1,4 @@
-:root{
+:root {
   --radius-base: 20px;
   --radius-cards: 16px;
 }
@@ -11,10 +11,14 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 1.6;
   background-color: #f5f5f5;
   color: #333;
+}
+
+.flow > * + * {
+  margin-bottom: 1.5em;
 }
 
 /* Hero Section */
@@ -22,47 +26,40 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
-  max-width: 1200px;
+  width: min(100%, 1200px);
   margin: 2rem auto;
-  padding: 3rem;
+  padding: 2rem;
   background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
   border-radius: var(--radius-base);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 
   .hero-content {
     flex: 1 0 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    max-width: 100%;
 
-  h1 {
-    font-size: 3.2rem;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-weight: 800;
+    h1 {
+      font-size: 3.2rem;
+      color: #ffffff;
+      line-height: 1.2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ffd700;
+      line-height: 1.4;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
   }
-
-  h2 {
-    font-size: 2rem;
-    color: #FFD700;
-    margin-bottom: 2rem;
-    line-height: 1.4;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  }
-
-}
 
   img {
-    width: 100%;
+    width: min(100%, 520px);
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-
 }
-
 
 .hero-image {
   width: 100%;
@@ -71,8 +68,6 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-
-
 
 /* Secciones Informativas */
 .info-section {
@@ -99,7 +94,7 @@ body {
 }
 
 .info-section h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -149,7 +144,7 @@ body {
 .countdown-title {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #FFD700;
+  color: #ffd700;
 }
 
 .countdown-timer {
@@ -169,7 +164,7 @@ body {
 .time-value {
   font-size: 3rem;
   font-weight: bold;
-  color: #FFD700;
+  color: #ffd700;
   margin-bottom: 0.5rem;
 }
 
@@ -197,12 +192,12 @@ body {
 
 .original-price span {
   text-decoration: line-through;
-  color: #FFD700;
+  color: #ffd700;
 }
 
 .savings {
   font-size: 1.4rem;
-  color: #FFD700;
+  color: #ffd700;
   font-weight: bold;
 }
 
@@ -215,7 +210,7 @@ body {
 }
 
 .purchase-button {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
+  background: linear-gradient(135deg, #4caf50, #45a049);
   color: white;
   padding: 15px 30px;
   border: none;
@@ -240,7 +235,7 @@ body {
   padding: 20px 40px;
   border: none;
   border-radius: var(--radius-cards);
-  background: linear-gradient(135deg, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
   cursor: pointer;
   transition: transform 0.3s ease;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -262,7 +257,12 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -333,7 +333,8 @@ body {
   margin-top: 2rem;
 }
 
-.confirm-button, .cancel-button {
+.confirm-button,
+.cancel-button {
   padding: 12px 25px;
   border: none;
   border-radius: var(--radius-cards);
@@ -343,7 +344,7 @@ body {
 }
 
 .confirm-button {
-  background: linear-gradient(135deg, #2C5364, #203A43);
+  background: linear-gradient(135deg, #2c5364, #203a43);
   color: white;
 }
 
@@ -362,11 +363,6 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .hero-section {
-    grid-template-columns: 1fr;
-    padding: 2rem;
-  }
-
   .hero-content h1 {
     font-size: 2.5rem;
   }
@@ -388,7 +384,8 @@ body {
     align-items: center;
   }
 
-  .join-button, .purchase-button {
+  .join-button,
+  .purchase-button {
     width: 100%;
     max-width: 300px;
   }
@@ -396,9 +393,15 @@ body {
 
 /* Animations */
 @keyframes successPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .success {
